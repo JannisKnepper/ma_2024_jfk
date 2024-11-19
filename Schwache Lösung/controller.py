@@ -8,24 +8,6 @@ import view
 from help_functions import *
 
 
-# def do_steps(steps, hist, model, inner_points_var, test_derivatives, test_functions, mu, lambd, right_sides, optim, t0):
-#
-#     for i in range(steps):
-#         print(i)
-#
-#         loss = md.train_step(model, inner_points_var, test_derivatives, test_functions, mu, lambd, right_sides, optim, t0)
-#
-#         # Append current loss to hist
-#         hist.append(loss.numpy())
-#
-#         # Output current loss after 50 iterates
-#         if i % 10 == 0:
-#             print(time() - t0)
-#             print('It {:05d}: loss = {:10.8e}'.format(i, loss))
-#
-#     return model, hist
-
-
 if __name__ == "__main__":
     t0 = time()
     DTYPE = 'float32'
