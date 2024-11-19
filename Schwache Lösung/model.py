@@ -131,30 +131,3 @@ def train_step(model, inner_points, test_derivatives, test_functions, mu, lambd,
 
     return loss
 
-
-if __name__ == "__main__":
-    # Tests
-    DTYPE = 'float32'
-
-    xmin = 0.
-    xmax = 1.
-    inner_points = [np.random.uniform(xmin, xmax, 3) for _ in range(4)]
-    inner_points_vec = tf.Variable(inner_points)
-
-    #boundary_points = sample_boundary(5, xmin, xmax)
-
-    #test_functions, test_derivatives = ([legendre_base(1, x)[0] for x in boundary_points],
-    #                                    [legendre_base(1, x)[1] for x in inner_points])
-
-    md = init_model(2, 3)
-    # print(md(tf.convert_to_tensor([[1., 2., 0.]])))
-    c = get_derivatives(md, inner_points_vec)
-    print(c)
-    # b = compute_loss(md, inner_points, test_derivatives, test_functions, 1, 1, [1,1,1,1,1,1,1,1,1,1,1,1])
-    # print(b)
-    # lower_left = [0., 0, 0]
-    # upper_right = [1, 0, 1]
-    # # Mögliche Seiten sind front, back, left, right, top
-    # g = create_boundary_function("front", lower_left, upper_right)
-    # rs = calculate_right_side(test_functions, g, boundary_points)
-    # print(rs)
