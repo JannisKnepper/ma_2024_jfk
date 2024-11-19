@@ -89,17 +89,3 @@ def plot_3d_to_1d(function):
     y_values = [function(x) for x in x_values]
     plt.plot(x_values, y_values, label='f(x) = sin(x)', color='blue')
     plt.show()
-
-
-if __name__ == "__main__":
-    # x, y = sample_boundary(100, 0., 1.)
-    # print(x)
-    # print(y)
-    # lower_left = [0.2, 0., 0.2]
-    # upper_right = [0.8, 0., 0.8]
-    # side = "front"
-    # g = create_boundary_function(side, lower_left, upper_right)
-    # x = tf.Variable(x, dtype="float32")
-    # z = tf.map_fn(g, x)
-    # print(z)
-    print(nabla_hat(tf.convert_to_tensor([[1,2,3], [0,0,0], [0,0,0]], dtype="float32")))
